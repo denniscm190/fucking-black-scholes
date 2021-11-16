@@ -1,1 +1,0 @@
-# fucking-black-scholes model
