@@ -1,5 +1,5 @@
 from unittest import TestCase
-from fbs import Option
+from fbs.helpers import Option
 
 
 class TestOption(TestCase):
