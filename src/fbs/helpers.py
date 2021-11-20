@@ -27,13 +27,26 @@ class Option:
     def compute_eu_call_price(self):
         """
         Determine the value of an European call option
-        :return:
+        :return: float
         """
 
         d1 = self.compute_d1()
         d2 = self.compute_d2()
 
-        price = self.s * norm.cdf(d1) - self.k * math.exp(- self.r * self.t) * norm.cdf(d2)
+        price = self.s * norm.cdf(d1) - self.k * math.exp(-self.r * self.t) * norm.cdf(d2)
+
+        return price
+
+    def compute_eu_put_price(self):
+        """
+        Determine the value of an European put option
+        :return: float
+        """
+
+        d1 = self.compute_d1()
+        d2 = self.compute_d2()
+
+        price = self.k * math.exp(- self.r * self.t) * norm.cdf(-d2) - self.s * norm.cdf(-d1)
 
         return price
 
@@ -60,3 +73,21 @@ class Option:
         d2 = d1 - self.std * np.sqrt(self.t)
 
         return d2
+
+
+def format_output(text, price):
+    """
+    Format output to print to terminal
+    :param text: string, required
+    :param price: float, required
+    :return: string, string
+    """
+
+    output = '{}: {}'.format(text, price)
+    output_length = len(output)
+    line = ''.join('-' for _ in range(output_length))
+
+    return line, output
+
+
+

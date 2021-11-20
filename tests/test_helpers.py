@@ -17,6 +17,12 @@ class TestOption(TestCase):
 
         self.assertEqual(price, 1.20, 'EU call price is not equal to 1.20')
 
+    def test_compute_eu_put_price(self):
+        price = self.option.compute_eu_put_price()
+        price = round(price, 2)
+
+        self.assertEqual(price, 1.68, 'EU put price is not equal to 1.68')
+
     def test_compute_d1(self):
         d1 = self.option.compute_d1()
         d1 = round(d1, 2)

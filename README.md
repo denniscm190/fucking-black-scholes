@@ -27,7 +27,12 @@ Price a European call option with the following data:
 
 #### Command
 ```bash
-fbs --spot-price=20.00 --exercise-price=21.00 --risk-free-rate=0.05 --std=0.25 --expiration=0.5
+fbs \
+--spot-price=20.00 \
+--exercise-price=21.00 \
+--risk-free-rate=0.05 \
+--std=0.25 \
+--expiration=0.5
 ```
 
 #### Output
@@ -35,5 +40,7 @@ fbs --spot-price=20.00 --exercise-price=21.00 --risk-free-rate=0.05 --std=0.25 -
 ```bash
 ---------------------------------------------
 European call option price: 1.197698084193286
+---------------------------------------------
+European put option price: 1.6792062367882679
 ---------------------------------------------
 ```

@@ -1,5 +1,6 @@
 import click
 from fbs.helpers import Option
+from fbs.helpers import format_output
 
 
 @click.command()
@@ -11,14 +12,23 @@ from fbs.helpers import Option
 def cli(spot_price, exercise_price, risk_free_rate, std, expiration):
     option = Option(spot_price, exercise_price, risk_free_rate, std, expiration)
 
-    # Format output
-    output = 'European call option price: {}'.format(option.compute_eu_call_price())
-    output_length = len(output)
-    line = ''.join('-' for _ in range(output_length))
+    line, call_output = format_output(
+        text='European call option price',
+        price=option.compute_eu_call_price()
+    )
 
-    # Output
+    _, put_output = format_output(
+        text='European put option price',
+        price=option.compute_eu_put_price()
+    )
+
+    # Output call
     click.echo(line)
-    click.echo(output)
+    click.echo(call_output)
+
+    # Output put
+    click.echo(line)
+    click.echo(put_output)
     click.echo(line)
 
 
