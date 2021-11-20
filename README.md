@@ -6,18 +6,8 @@ stupid stuff from the professor's slides.
 
 ## Installation
 
-### Using PIP
-
 ```bash
 pip install fucking-black-scholes
-```
-
-### Manual
-
-```bash
-git clone https://github.com/denniscm190/fucking-black-scholes.git
-cd fucking-black-scholes
-python setup.py install
 ```
 
 ## Usage
