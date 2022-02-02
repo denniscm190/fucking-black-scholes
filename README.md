@@ -6,8 +6,10 @@ stupid stuff from the professor's slides.
 
 ## Installation
 
+### Using pip
+
 ```bash
-pip install fucking-black-scholes
+pip3 install fucking-black-scholes
 ```
 
 ## Usage
@@ -26,6 +28,7 @@ Price a European call option with the following data:
 - Time to expiration = 6 months
 
 #### Command
+
 ```bash
 fbs \
 --spot-price=20.00 \
