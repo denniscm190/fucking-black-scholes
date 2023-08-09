@@ -1,8 +1,6 @@
 # python-black-scholes model 
 
-I'm a finance student trying to stop procrastinating and start studying my derivatives lectures. So, in order to
-understand the Black-Scholes model, I built this simple command line tool. Which is far more interesting than memorizing
-stupid stuff from the professor's slides.
+
 
 ## Installation
 
